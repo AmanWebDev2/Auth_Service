@@ -7,6 +7,7 @@ const {AuthRequestValidatorMiddleware} = require('../../middlewares/index');
 
 router.post('/signup',AuthRequestValidatorMiddleware.validateUserAuth,UserController.create);
 router.post('/signin',AuthRequestValidatorMiddleware.validateUserAuth,UserController.signIn);
-router.get('/isAuthenticated',UserController.isAuthenticated)
+router.get('/isAuthenticated',UserController.isAuthenticated);
+router.get('/isAdmin',AuthRequestValidatorMiddleware.validateIsAdminRequest,UserController.isAdmin);
 
 module.exports = router;

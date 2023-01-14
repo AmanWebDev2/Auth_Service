@@ -16,7 +16,10 @@ class UserService {
             return user;
         } catch (error) {
             console.log('something went wrong in service layer');
-            throw { error };
+            if(error.name === 'SequelizeValidationError') {
+                throw error;
+            }
+            throw error;
         }
     }
 
@@ -58,7 +61,10 @@ class UserService {
 
         } catch (error) {
             console.log('something went wrong in signin');
-            throw { error };
+            if(error.name === 'AttributeNotFound') {
+                throw error;
+            }
+            throw error; 
         }
     }
 

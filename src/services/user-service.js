@@ -29,7 +29,7 @@ class UserService {
             return response;
         } catch (error) {
             console.log('something went wrong in service layer');
-            throw { error };
+            throw error;
         }
     }
 
@@ -39,7 +39,7 @@ class UserService {
             return user;
         } catch (error) {
             console.log('something went wrong in service layer');
-            throw { error };
+            throw error;
         }
     }
 
@@ -74,7 +74,7 @@ class UserService {
             return result;
         } catch (error) {
             console.log('something went wrong in token creation');
-            throw { error };
+            throw error;
         }
     }
 
@@ -84,7 +84,7 @@ class UserService {
             return response;
         } catch (error) {
             console.log('something went wrong in token validation');
-            throw { error };
+            throw error;
         }
     }
 
@@ -93,7 +93,7 @@ class UserService {
             return bcrypt.compareSync(userInputPlainPassword,encryptedPassword);
         } catch (error) {
             console.log('something went wrong in token validation');
-            throw { error };
+            throw error;
         }
     }
 
@@ -110,7 +110,7 @@ class UserService {
             return user.id;
         } catch (error) {
             console.log('something went wrong in the auth process');
-            throw { error };
+            throw error;
         }
     }
 
@@ -120,7 +120,7 @@ class UserService {
             return response;
         } catch (error) {
             console.log('something went wrong in the service layer');
-            throw { error };
+            throw error;
         }
     }
 }

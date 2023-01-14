@@ -39,7 +39,7 @@ class UserRepository {
             return user;
         } catch (error) {
             console.log('something went wrong in repository layer');
-            throw { error };
+            throw error;
         }
     }
 
@@ -77,7 +77,7 @@ class UserRepository {
             return response;
         } catch (error) {
             console.log('something went wrong in repository layer');
-            throw { error };
+            throw error;
         }
     }
 }
